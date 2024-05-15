@@ -7491,10 +7491,9 @@ a.anchor-link {
 <span class="n">X</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"dataset/X_data.csv"</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"dataset/y_data.csv"</span><span class="p">)</span><span class="o">.</span><span class="n">Status</span>
 
-<span class="c1"># Trasformazione dei tipi object in category</span>
 <span class="n">object_columns</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">'object'</span><span class="p">])</span><span class="o">.</span><span class="n">columns</span>
 <span class="n">X</span><span class="p">[</span><span class="n">object_columns</span><span class="p">]</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">object_columns</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">'category'</span><span class="p">)</span>
-<span class="n">X</span><span class="o">.</span><span class="n">Stage</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">Stage</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">"category"</span><span class="p">)</span> <span class="c1"># Lo Stage rappresenta il "nome" della condizione della malattia, non ha senso come valore float64</span>
+<span class="n">X</span><span class="o">.</span><span class="n">Stage</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">Stage</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">"category"</span><span class="p">)</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
@@ -8064,6 +8063,17 @@ C:\Python312\Lib\site-packages\seaborn\_base.py:949: FutureWarning: When groupin
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4c731b33-2498-416f-b349-9365bb3c11b9">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>We analyze the boxplots in order to select the best Scaler</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=14ae2c6c-bb75-4763-83a6-de1b7d46acef">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8072,8 +8082,7 @@ C:\Python312\Lib\site-packages\seaborn\_base.py:949: FutureWarning: When groupin
 <div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Prima di effettuare lo scaling, analizziamo la distribuzione delle varie variabili numeriche per decidere quello più appropriato</span>
-<span class="n">numeric_columns</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">'float64'</span><span class="p">,</span> <span class="s1">'int64'</span><span class="p">])</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">numeric_columns</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">'float64'</span><span class="p">,</span> <span class="s1">'int64'</span><span class="p">])</span>
 
 <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">numeric_columns</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
