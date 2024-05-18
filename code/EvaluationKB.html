@@ -7549,7 +7549,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The CustomImputers retrive the labels for the KNImputers by matching the indeces of the current X sent by the pipeline and the global y which contains all the labels. This is done since with fit and transform we cannot send our current y along with the X. fit_resample can do this, but then the inputer where ignored in .fit() since this is how it's implemented, so there were missing values errors.</p>
+<p>The CustomImputers retrive the labels for the KNNImputers by matching the indeces of the current X sent by the pipeline and the global y which contains all the labels. This is done since with fit and transform we cannot send our current y along with the X. fit_resample can do this, but then the imputer were ignored in .fit() since this is how it's implemented, so there were missing values errors.</p>
 </div>
 </div>
 </div>
@@ -7616,7 +7616,7 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>The CustomOrdinalEncoder is created in order to set the correct order for the values since it's not the default behaviour.
-In this case, since the CustomOrdinalEncoder is the first step, in the custom_orders i can use the name of the label.</p>
+In this case, since the CustomOrdinalEncoder is the first step, in the custom_orders i can use the name of the feature.</p>
 </div>
 </div>
 </div>
@@ -9303,6 +9303,21 @@ p value: 0.001953125
 There is a statistically relevant difference between ADABOOST(NBC) and LogisticRegression
 ----
 </pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e936be36-65fe-49cf-b549-9878777a0158">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">"RandomForestKB.npy"</span><span class="p">,</span> <span class="n">cv_scores</span><span class="p">[</span><span class="s2">"RandomForest"</span><span class="p">])</span>
+</pre></div>
 </div>
 </div>
 </div>
