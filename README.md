@@ -1,1 +1,1 @@
-The main content of the study is found on the Evaluation*** files (in the code folder), where *** stands for the procedure adopted.
+The main content of the study is found in the code folder. The pipelines folder contains the images of the pipeline since it's not possible to see them in the Evaluation*** files. It's suggested to check EvaluationNonSMOTENC before the SMOTENC version since some parts contains also the explaination.
